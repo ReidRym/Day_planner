@@ -7,6 +7,7 @@ This is a simple calendar application that allows a user to save events for each
 ## Screen Shot
 
 ## Live Link
+https://reidrym.github.io/Day_planner/
 
 ## Author
 
