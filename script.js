@@ -3,7 +3,11 @@ var nineAm = $("#9am");
 var TenAm = $("#10am");
 var ElevenAm = $("#11am");
 var NoonPm = $("#12pm");
-var ThirteenHundredPm = $("#13pm");
+var thirteenHundred = $("#13pm");
+var fourteenHundred = $("#14pm");
+var fifteenHundred = $("#15pm");
+var sixteenHundred = $("#16pm");
+var SeventeenHundred = $("#17pm");
 
 
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
@@ -26,7 +30,11 @@ var textvalue =$(this).siblings(".description").val();
   $("#11 .description").val (localStorage.getItem("11"));
   $("#12 .description").val (localStorage.getItem("12"));
   $("#13 .description").val (localStorage.getItem("13"));
-
+  $("#14 .description").val (localStorage.getItem("14"));
+  $("#15 .description").val (localStorage.getItem("15"));
+  $("#16 .description").val (localStorage.getItem("16"));
+  $("#17 .description").val (localStorage.getItem("17"));
+  
   function hourUpdater() {
 console.log(dayjs().hour());
 $(".time-block").each(function () {
