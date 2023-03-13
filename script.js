@@ -28,40 +28,22 @@ var textvalue =$(this).siblings(".description").val();
   $("#13 .description").val (localStorage.getItem("13"));
 
   function hourUpdater() {
+console.log(dayjs().hour());
+$(".time-block").each(function () {
+  var divHour = $(this).attr("id");
+  if (divHour <dayjs().hour() ) {
+    $(this).addClass("past");
+  } else if (divHour >dayjs().hour() ) {
+    $(this).addClass("future");
 
-  if (dayjs().hour() > 9) {
-    $("#9am").addClass("past");
-  } else if (dayjs().hour() < 9) {
-    $("#9am").addClass("future");
+  }else if (divHour == dayjs().hour() ) {
+    $(this).addClass("present");
+  }
+ 
+})
 
   }
- if (dayjs().hour() > 10) {
-    $("#10am").addClass("past");
-  } else if (dayjs().hour() < 10) {
-    $("#10am").addClass("future");
-
-  }
-  if (dayjs().hour() > 11) {
-    $("#11am").addClass("past");
-  } else if (dayjs().hour() < 11) {
-    $("#11am").addClass("future");
-
-  }
-  if (dayjs().hour() > 12) {
-    $("#12pm").addClass("past");
-  } else if (dayjs().hour() < 12) {
-    $("#12pm").addClass("future");
-
-  }
-  if (dayjs().hour() > 13) {  
-    $("#13pm").addClass("past");
-  } else if (dayjs().hour() < 13) {
-    $("#13pm").addClass("future");
-  }
-  
-
-  }
-
+hourUpdater();
 
 
 
@@ -81,7 +63,7 @@ var textvalue =$(this).siblings(".description").val();
   
   //
   // TODO: Add code to display the current date in the header of the page.
-   currentDate = dayjs().format("dddd, MMMM D, YYYY, mm:ss a");
+   currentDate = dayjs().format("dddd, MMMM D, YYYY, HH:mm a");
   $("#currentDay").text(currentDate);
   dayjs().hour(); 
 
